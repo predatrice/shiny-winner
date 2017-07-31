@@ -1,8 +1,10 @@
 <?php
+session_start();
 //get database connection
 include("includes/database.php");
 
 if($_SERVER["REQUEST_METHOD"]=="POST"){
+    // user email or username
     $user_email = $_POST["user"];
     
     //check if the user enrered and email address
@@ -32,7 +34,11 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
             $errors["account"] = "email or password incorrect";
         }
         else{
-            $message = "You have been  logged in";
+            $message = "You have been logged in";
+            $username = $user["username"];
+            $_SESSION["username"] = $username;
+            $email = $user["email"];
+            $_SESSION["email"] = $email;
         }
     }
     else{
@@ -47,6 +53,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     include("includes/head.php");
     ?>
     <body>
+        <?php include("includes/navigation.php"); ?>
         <div class="container">
             <div class="row">
                 <div class="col-md-4 col-md-offset-4">
@@ -60,6 +67,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
                         <label for="password"> Your Password</label>
                         <input class="form-control" type="password" id="password" name="password" placeholder="your password">
                     </div>
+                    <p>Don't have an account? <a href="register.php">Sign Up</a></p>
                     <div class="text-center">
                         <button type="submit" name="submit" value="login" class="btn btn-info">Login</button>
                      </div>
