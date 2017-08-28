@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("includes/database.php");
 // PROCESS REGISTRATION WITH PHP
 //print_r($_SERVER);
@@ -38,17 +39,32 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     // hash the password
     $password = password_hash($password1,PASSWORD_DEFAULT);
     //create a query string
+    // $query = "INSERT 
+    //           INTO accounts 
+    //           (username,email,password,status,created)
+    //           VALUES 
+    //           ('$username','$email','$password',1,NOW())";
+    
+    //The best way to create safe query is to use parameterised query
     $query = "INSERT 
               INTO accounts 
-              (username,email,password,status,created) 
+              (username,email,password,status,created)
               VALUES 
-              ('$username','$email','$password',1,NOW())";
-    $result = $connection->query($query);
-    if($result==true){
+              (?,?,?,1,NOW())";
+    $statement = $connection->prepare($query);
+    $statement->bind_param("sss",$username,$email,$password);
+    
+    //$result = $connection->query($query);
+    $statement->execute();
+    //$result = $statement->get_result();
+  
+    
+    if($statement->affected_rows > 0){
      // echo "account created";
      $message = "Account successfully created";
     }
     else{
+      //if not successful, check for duplicates
       if($connection->errno == 1062){
         $message = $connection->error;
         //check if error contains "username"
@@ -56,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
           $errors["username"] = "username allready taken";
         }
         if(strstr($message, "email")){
-          $errors["email"] = "email allready taken";
+          $errors["email"] = "email allready used";
         }
       }
     }
@@ -70,7 +86,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST"){
     include("includes/head.php");
     ?>
 <body>
-  <?php include("includes/navigation.php"); ?>
+  <?php include("includes/navigation.php"); ?> 
   <div class ="container">
     <div class="row">
       <div class="col-md-4 col-md-offset-4">
