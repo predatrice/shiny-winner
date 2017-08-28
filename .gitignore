@@ -1,0 +1,4 @@
+assets/database_tables/*.sql
+components/bootstrap/node_modules
+
+
