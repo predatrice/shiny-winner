@@ -1,0 +1,18 @@
+[15-Nov-2017 03:01:40 UTC] PHP Fatal error:  Call to undefined method Account::checkIfUserExists() in /home/ubuntu/workspace/ajax/ajaxregister.php on line 9
+[15-Nov-2017 03:01:40 UTC] PHP Stack trace:
+[15-Nov-2017 03:01:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/ajax/ajaxregister.php:0
+[15-Nov-2017 03:01:40 UTC] PHP Fatal error:  Call to undefined method Account::checkIfUserExists() in /home/ubuntu/workspace/ajax/ajaxregister.php on line 9
+[15-Nov-2017 03:01:40 UTC] PHP Stack trace:
+[15-Nov-2017 03:01:40 UTC] PHP   1. {main}() /home/ubuntu/workspace/ajax/ajaxregister.php:0
+[15-Nov-2017 03:01:41 UTC] PHP Fatal error:  Call to undefined method Account::checkIfUserExists() in /home/ubuntu/workspace/ajax/ajaxregister.php on line 9
+[15-Nov-2017 03:01:41 UTC] PHP Stack trace:
+[15-Nov-2017 03:01:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/ajax/ajaxregister.php:0
+[15-Nov-2017 03:01:41 UTC] PHP Fatal error:  Call to undefined method Account::checkIfUserExists() in /home/ubuntu/workspace/ajax/ajaxregister.php on line 9
+[15-Nov-2017 03:01:41 UTC] PHP Stack trace:
+[15-Nov-2017 03:01:41 UTC] PHP   1. {main}() /home/ubuntu/workspace/ajax/ajaxregister.php:0
+[15-Nov-2017 03:01:42 UTC] PHP Fatal error:  Call to undefined method Account::checkIfUserExists() in /home/ubuntu/workspace/ajax/ajaxregister.php on line 9
+[15-Nov-2017 03:01:42 UTC] PHP Stack trace:
+[15-Nov-2017 03:01:42 UTC] PHP   1. {main}() /home/ubuntu/workspace/ajax/ajaxregister.php:0
+[15-Nov-2017 05:00:14 UTC] PHP Fatal error:  Call to undefined method Account::checkIfUserExists() in /home/ubuntu/workspace/ajax/ajaxregister.php on line 9
+[15-Nov-2017 05:00:14 UTC] PHP Stack trace:
+[15-Nov-2017 05:00:14 UTC] PHP   1. {main}() /home/ubuntu/workspace/ajax/ajaxregister.php:0
